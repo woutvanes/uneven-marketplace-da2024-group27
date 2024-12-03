@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Current Bookings</title>
+</head>
+<body>
+   <h1>Your Current Bookings</h1>
+   <div>
+       {% if bookings %}
+           <ul>
+               {% for booking in bookings %}
+                   <li>
+                       <h3>{{ booking.product.name }}</h3>
+                       <p><strong>Time:</strong> {{ booking.time }}</p>
+                       <p><strong>Persons Booked:</strong> {{ booking.personsBooked }}</p>
+                       <p><strong>Commission Fee:</strong> ${{ "%.2f"|format(booking.commissionfee) }}</p>
+                       <p><strong>Booked Calendar:</strong> {{ booking.booked_calendar }}</p>
+                       <a href="{{ url_for('main.add_review', booking_id=booking.id) }}">Leave a Review</a>
+                   </li>
+               {% endfor %}
+           </ul>
+       {% else %}
+           <p>You have no current bookings.</p>
+       {% endif %}
+   </div>
+</body>
+</html>
