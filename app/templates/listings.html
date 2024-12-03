@@ -1,7 +1,10 @@
-<!-- templates/listings.html -->
 <h1>All Listings</h1>
 {% for listing in listings %}
-    <p>{{ listing.listing_name }} - ${{ "%.2f"|format(listing.price) }}</p>
+<div>
+   <h2>{{ listing.name }}</h2>
+   <p>{{ listing.description }}</p>
+   <img src="{{ listing.picture }}" alt="Product Image" width="200">
+</div>
 {% else %}
-    <p>No listings available.</p>
+<p>No listings available.</p>
 {% endfor %}
