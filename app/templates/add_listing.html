@@ -1,7 +1,13 @@
-<!-- templates/add_listing.html -->
-<h1>Add Listing</h1>
-<form method="post">
-    Listing Name: <input type="text" name="listing_name" required><br>
-    Price: <input type="number" step="0.01" name="price" required><br>
-    <input type="submit" value="Add Listing">
+form method="post">
+   Product Name: <input type="text" name="listing_name" required><br>
+   Description: <textarea name="description" required></textarea><br>
+   Picture URL: <input type="text" name="picture"><br>
+   Status:
+   <select name="status">
+       <option value="Available">Available</option>
+       <option value="Unavailable">Unavailable</option>
+   </select><br>
+   Available Calendar: <input type="text" name="available_calendar"><br>
+   <input type="submit" value="Add Product">
 </form>
+
