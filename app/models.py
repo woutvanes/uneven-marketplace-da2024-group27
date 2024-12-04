@@ -57,4 +57,4 @@ class Review(db.Model):
     # Foreign Keys
     buyerID = db.Column(db.Integer, db.ForeignKey('users.userID'), nullable=False)
     BookingID = db.Column(db.Integer, db.ForeignKey('bookings.BookingID'), nullable=False)
-    
+  
